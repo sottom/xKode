@@ -9,19 +9,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
-    <x name="app"></x>
 
-<template name="app">
+<!-- the apps -->
+<x name="app1"></x>
+<x name="app2"></x>
 
-    <x name='nav'></x>
+<template name="app1">
 
-    <div class="container" style="border: solid black 1px;">
-        <x name='header'></x>
+    <div id='app1'>
+        <x name='nav'></x>
 
-        <x name='content'></x>
+        <div class="container" style="border: solid black 1px;">
+            <x name='header'></x>
+            <x name='content'></x>
+        </div>
+
+        <x name="footer"></x>
     </div>
-
-    <x name="footer"></x>
 
 </template>
 
@@ -129,12 +133,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a id="homeTab" class="nav-link" href="#">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a id="linkTab" class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
@@ -146,6 +150,16 @@
             </form>
         </div>
     </nav>
+
+</template>
+
+<template name="app2">
+
+    <div id="app2" class="d-none">
+        <!-- nav from app1 -->
+        <x name="nav"></x>
+        <h1>Hello World</h1>
+    </div>
 
 </template>
 

@@ -3,7 +3,17 @@ var concat = require('gulp-concat');
 var watch  = require('gulp-watch');
 
 gulp.task('scripts', function() {
-  return gulp.src('./src/*.js')
+  return gulp.src([
+    './jsbase/windowLoadStart.js',
+    './jsbase/main.js',
+    './jsbase/runOtherCodeStart.js',
+
+    './src/*.js',
+
+    './jsbase/runOtherCodeEnd.js',
+    './jsbase/windowLoadEnd.js',
+
+  ])
     .pipe(concat('all.js'))
     .pipe(gulp.dest('./dist/'));
 });
@@ -11,7 +21,10 @@ gulp.task('scripts', function() {
 gulp.task('html', function() {
   return gulp.src([
     './htmlbase/start.html',
-    './html/*.html',
+
+    './app1/**/*.html',
+    './app2/**/*.html',
+
     './htmlbase/end.html',
   ])
     .pipe(concat('index.html'))
@@ -20,6 +33,6 @@ gulp.task('html', function() {
 
 gulp.task('watch', function () {
   // Endless stream mode
-    gulp.watch('./src/*.js', ['scripts', 'html']);
-    gulp.watch('./html/*.html', ['html', 'scripts']);
+    gulp.watch(['./app1/*.html', './app2/*.html', './htmlbase/*.html'], ['html', 'scripts']);
+    gulp.watch(['./jsbase/main.js','./src/*.js'], ['scripts', 'html']);
 });

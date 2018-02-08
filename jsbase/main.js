@@ -1,5 +1,3 @@
-(function() {
-  window.onload = function() {
     var stopInterval = false;
 
     function replaceXCode() {
@@ -45,6 +43,8 @@
         templates.forEach(temp => {
           temp.parentNode.removeChild(temp);
         });
+
+        runAllOtherCode();
       }
     }
 
@@ -53,5 +53,3 @@
     }, 10);
 
     replaceXCode();
-  };
-})();
