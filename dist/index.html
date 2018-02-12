@@ -4,124 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mako.js</title>
+    <title>MakoJS</title>
     <!-- bootstrap css cdn -->
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <style>
+        #fadeWrapper {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <div id="fadeWrapper">
+        <!-- the apps -->
+        <x name="app"></x>
 
-<!-- the apps -->
-<x name="app1"></x>
-<x name="app2"></x>
-
-<template name="app1">
-
-    <div id='app1'>
-        <x name='nav'></x>
-
-        <div class="container" style="border: solid black 1px;">
-            <x name='header'></x>
-            <x name='content'></x>
-        </div>
-
+<template name="app">
+    <div id='app'>
+        <!-- App (Your Code) -->
+        <x name='bootstrap-inverse-nav-basic'></x>
+        <x name="headerImg"></x>
+        <x name="columnSection1"></x>
+        <x name="columnSection2"></x>
         <x name="footer"></x>
-    </div>
-
-</template>
-
-<template name="colFourContent">
-    <div class="p-2">
-        <p>Hi Bob</p>
+        <!-- End App (Your Code) -->
     </div>
 </template>
 
-<template name="colOneContent">
-
-    <div class="p-2">
-        <p>Aute laboris voluptate ut culpa id ex ex sunt dolore nisi tempor do ut culpa. Deserunt irure occaecat non incididunt
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            Occaecat enim sit eiusmod pariatur et est exercitation. Laboris pariatur laborum magna enim. Nostrud non pariatur
-            deserunt proident anim. Cillum voluptate pariatur ipsum tempor esse culpa. Culpa dolore commodo velit elit duis
-            nostrud. Aute culpa magna ipsum eiusmod mollit voluptate nisi id et exercitation adipisicing in.j</p>
-    </div>
-
-</template>
-
-<template name="colThreeContent">
-
-    <div class="p-2">
-        <p>Aute laboris voluptate ut culpa id ex ex sunt dolore nisi tempor do ut culpa. Deserunt irure occaecat non incididunt
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            Occaecat enim sit eiusmod pariatur et est exercitation. Laboris pariatur laborum magna enim. Nostrud non pariatur
-            deserunt proident anim. Cillum voluptate pariatur ipsum tempor esse culpa. Culpa dolore commodo velit elit duis
-            nostrud. Aute culpa magna ipsum eiusmod mollit voluptate nisi id et exercitation adipisicing in.j</p>
-    </div>
-
-</template>
-
-
-<template name="colTwoContent">
-
-    <div class="p-2">
-        <p>Aute laboris voluptate ut culpa id ex ex sunt dolore nisi tempor do ut culpa. Deserunt irure occaecat non incididunt
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            proident culpa quis esse proident cupidatat ipsum laboris nisi. Esse quis ex amet officia sint dolore tempor.
-            Occaecat enim sit eiusmod pariatur et est exercitation. Laboris pariatur laborum magna enim. Nostrud non pariatur
-            deserunt proident anim. Cillum voluptate pariatur ipsum tempor esse culpa. Culpa dolore commodo velit elit duis
-            nostrud. Aute culpa magna ipsum eiusmod mollit voluptate nisi id et exercitation adipisicing in.j</p>
-    </div>
-
-</template>
-
-<template name='content'>
-
-    <div class="row text-center">
-        <div class="col" style="border: solid black 1px;">
-            <h1>Column 1</h1>
-            <x name="colOneContent"></x>
-        </div>
-        <div class="col" style="border: solid black 1px;">
-            <h1>Column 2</h1>
-            <x name="colTwoContent"></x>
-        </div>
-        <div class="col" style="border: solid black 1px;">
-            <h1>Column 3</h1>
-            <x name="colThreeContent"></x>
-        </div>
-        <div class="col" style="border: solid black 1px;">
-            <h1>Column 4</h1>
-            <x name="colFourContent"></x>
-        </div>
-    </div>
-
-</template>
-
-<template name="footer">
-
-    <footer>
-        <div class="text-center p-4" style="border: solid black 1px;">
-            <h5>@ Copyright 2018, Mako.js</h5>
-        </div>
-    </footer>
-
-</template>
-
-<template name='header'>
-
-    <div class="row">
-        <div class="text-center p-5 col" style="border: solid black 1px;">
-            <h1>My Awesome Page</h1>
-        </div>
-    </div>
-
-</template>
-
-<template name='nav'>
+<template name='bootstrap-inverse-nav-basic'>
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -153,23 +63,53 @@
 
 </template>
 
-<template name="app2">
-
-    <div id="app2" class="d-none">
-        <!-- nav from app1 -->
-        <x name="nav"></x>
-        <h1>Hello World</h1>
+<template name="columnSection1">
+    <div class='row'>
+        <div class="col-5" style='height: 200px; border: solid black 1px; background-color: lightgreen;'>
+            <h1>Hello</h1>
+        </div>
+        <div class="col-7" style='height: 200px; border: solid black 1px; background-color: orange;'>
+            <h1>Hello</h1>
+        </div>
     </div>
+</template>
+
+<template name="columnSection2">
+    <div class='row'>
+        <div class="col-7" style='height: 200px; border: solid black 1px; background-color: red;'>
+            <h1>Hello</h1>
+        </div>
+        <div class="col-5" style='height: 200px; border: solid black 1px; background-color: lightblue;'>
+            <h1>Hello</h1>
+        </div>
+    </div>
+</template>
+
+<template name="footer">
+
+    <footer>
+        <div class="text-center p-4" style="border: solid black 1px; background-color: rgba(0, 0, 0, 0.9);">
+            <h5>@ Copyright 2018, Mako.js</h5>
+        </div>
+    </footer>
 
 </template>
 
-<!-- bootstrap cdns -->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<template name='headerImg'>
+    <div class="row">
+        <div class="text-center p-5 col" style="border: solid black 1px;">
+            <h1>Hello People</h1>
+        </div>
+    </div>
+</template>
 
-<!-- framwork reference -->
-<script src="./all.js"></script>
+    </div>
+    <!-- bootstrap cdns -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
+    <!-- framework reference -->
+    <script src="./index.js"></script>
 </body>
 </html>

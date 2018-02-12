@@ -1,7 +1,10 @@
-  window.onload = function() {
+$(document).ready(function(){
 
+
+    // GLOBALS
     var stopInterval = false;
 
+    // FUNCTION THAT REPLACES ALL TEMPLATES ON THE SCREEN
     function replaceXCode() {
       // object that stores text used to replace templates of code
       let replacements = {};
@@ -46,6 +49,8 @@
           temp.parentNode.removeChild(temp);
         });
 
+        // once all the x and template tags are replaced, show the screen
+        $('#fadeWrapper').fadeIn(800);
         runAllOtherCode();
       }
     }
@@ -53,8 +58,6 @@
     var inter = setInterval(() => {
       replaceXCode();
     }, 10);
-
-    replaceXCode();
 
 function runAllOtherCode() {
 
@@ -73,6 +76,7 @@ function runAllOtherCode() {
         document.querySelector("#app1").classList.remove("d-none");
     }
 
+
 }
 
-};
+});

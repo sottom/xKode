@@ -12,3 +12,4 @@
         document.querySelector("#app2").classList.add("d-none");
         document.querySelector("#app1").classList.remove("d-none");
     }
+

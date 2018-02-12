@@ -8,22 +8,25 @@ gulp.task('scripts', function() {
     './jsbase/main.js',
     './jsbase/runOtherCodeStart.js',
 
-    './src/*.js',
+    ///////////// your code //////////////
+    './js/*.js',
+    ///////////// your code //////////////
 
     './jsbase/runOtherCodeEnd.js',
     './jsbase/windowLoadEnd.js',
-
   ])
-    .pipe(concat('all.js'))
+    .pipe(concat('index.js'))
     .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('html', function() {
   return gulp.src([
     './htmlbase/start.html',
+    './htmlbase/app.html',
 
-    './app1/**/*.html',
-    './app2/**/*.html',
+    ///////////// your code //////////////
+    './html/**/*.html',
+    ///////////// your code //////////////
 
     './htmlbase/end.html',
   ])
@@ -33,6 +36,5 @@ gulp.task('html', function() {
 
 gulp.task('watch', function () {
   // Endless stream mode
-    gulp.watch(['./app1/*.html', './app2/*.html', './htmlbase/*.html'], ['html', 'scripts']);
-    gulp.watch(['./jsbase/main.js','./src/*.js'], ['scripts', 'html']);
+    gulp.watch(['./html/*', './htmlbase/*', './js/*', './jsbase/*'], ['html', 'scripts']);
 });
